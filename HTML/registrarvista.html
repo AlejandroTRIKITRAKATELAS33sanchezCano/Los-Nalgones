@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
 	<link rel="stylesheet" href="CSS/style_cuenta.css">
 	<script src="../HTML/CSS/Js/Registrar.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("demo-form").submit();
+        }
+    </script>
 </head>  
 <body>
     <form class="formulario">
@@ -15,12 +21,27 @@
         <div class="contenedor">
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Nombre Completo">
+                <input type="text" placeholder="Nombre">
             </div>
             
             <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" placeholder="Apellido Paterno">
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" placeholder="Apellido Materno">
+            </div>
+
+            <div class="input-contenedor">
                 <i class="fa-solid fa-hashtag icon"></i>
-                <input type="text" placeholder="Numero de Boleta">
+                <input type="number" placeholder="Numero de Boleta">
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fa-solid fa-hashtag icon"></i>
+                <input type="number" placeholder="Introduce tu Edad">
             </div>
             
             <div class="input-contenedor">
@@ -63,6 +84,7 @@
                     <option value="1">M</option>
                     <option value="2">H</option>
                 </select>
+
             </div>
             <input type="submit" value="Registrate" class="saber-mas" onclick="Grupo()">
             <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.html">Iniciar Sesion</a></p>
