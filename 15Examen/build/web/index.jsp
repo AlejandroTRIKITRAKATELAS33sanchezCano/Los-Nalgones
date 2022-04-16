@@ -14,10 +14,9 @@
 <body>
     <header>
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#"></a>
-            <a href="#">Perfil</a>
-            <a href="#">Incia Ahora</a>
+            <a href="index.jsp">Inicio</a>
+            <a href="registrarvista.html">Perfil</a>
+            <a href="#">Incia ahora</a>
         </nav>
         <section class="textos-header">
             <h1>IKPALI</h1>
