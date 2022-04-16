@@ -236,7 +236,8 @@ a {
 	position: relative;
 }
 
-.select {
+.select,
+.selecionar {
 	background: #fff;
 	width: 100%;
 	box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
@@ -254,12 +255,15 @@ a {
 }
 
 .select.active,
-.select:hover {
+.select:hover,
+.selecionar.active,
+.selecionar:hover {
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
 	border: 2px solid #213f8f;
 }
 
-.select.active:before {
+.select.active:before,
+.selecionar.active:before {
 	content: "";
 	display: block;
 	height: 0;
@@ -273,7 +277,8 @@ a {
 	left: calc(50% - 15px);
 }
 
-.select i {
+.select i,
+.selecionar i {
 	font-size: 30px;
 	margin-left: 30px;
 	color: #213f8f;
@@ -362,6 +367,7 @@ a {
         margin-top: -40px;
     }
 }
+
 
 /* adaptación a dispositivos */
 @media (max-width: 750px) {
