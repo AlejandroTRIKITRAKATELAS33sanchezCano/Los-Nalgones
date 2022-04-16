@@ -34,22 +34,24 @@
                 //conectar
                 Class.forName(driver);
                 con = DriverManager.getConnection(url, username, password);
+                
                 try{
                     String nom, appat, apmat, sexo, edad, bol;
-                    int idGrupo;
+                    
                     int grupoid;
-                    String  t ;
+                    int  t ;
                     int s;
                     int g;
-                    s = Integer.parseInt(request.getParameter("semestre"));
-                    t = request.getParameter("Turno");
-                    g = Integer.parseInt(request.getParameter("Grupo"));
-                   
-                    String grupo = "'"+s+""+t+""+g+"'";
-                    System.out.println(grupo);
-                    set = con.createStatement();
-                    rs = set.executeQuery("select * from grupo where descripcion ="+grupo);
                     
+                    
+                    s = Integer.parseInt(request.getParameter("semestre"));
+                    t = Integer.parseInt(request.getParameter("turno"));
+                    g = Integer.parseInt(request.getParameter("Grupo"));
+                    
+                    s = s - 1 ;
+                    s = (s * 10) + t;
+                    grupoid = s + g;
+                 
                     
                     bol = request.getParameter("bol");
                     nom = request.getParameter("nombre");
@@ -60,23 +62,10 @@
                     password = request.getParameter("password");
                     set = con.createStatement();
                     
-                     
-                    if (t == "IM"){
-                        
-                        s = s - 1 ;
-                        s = s * 10;
-                        grupoid = s + g;
-                        String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
+                   
+                    
+                    String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
                         int registro = set.executeUpdate(q);
-                    }
-                    if (t == "IV"){
-                        s = s - 1 ;
-                        s = (s * 10) + 60;
-                        grupoid = s + g;
-                        String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
-                        int registro = set.executeUpdate(q);
-                    }
-
                     %>
                     <h1>Registro Exitoso</h1>
                      <a href="index.jsp">Regresar a principal</a>
