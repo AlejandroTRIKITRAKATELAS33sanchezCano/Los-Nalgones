@@ -37,6 +37,7 @@
                 con = DriverManager.getConnection(url, username, password);
                 
                 try{
+                    
                     String nom, appat, apmat, sexo, edad, bol;
                     
                     int grupoid;
@@ -68,27 +69,32 @@
                     String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
                         int registro = set.executeUpdate(q);
                     %>
-                   <form class="formulario" action ="registrar.jsp">
+                   <form class="formulario" >
                     <h1>Registro Exitoso</h1>
                     <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.html">Iniciar Sesion</a></p>
-                     <a href="index.jsp">Regresar a principal</a>
+                   </form>
                     <%
                     
                 }catch(SQLException es){
                     System.out.println("Error al registrar en la tabla");
                     System.out.println(es.getMessage());
                     %>
-                    <h1>No se pudo registrar en la tabla</h1> 
+                    <form class="formulario" >
+                    <h1>Usuario o boleta ya registrado</h1> 
+                    </form>
                     <%
 
                 }
                 
             }catch(Exception e){
             System.out.println("Error al conectar la base de datos");
-            System.out.println(e.getMessage());
-            System.out.println("nota: si se dejo el programa en espera por mucho tiempo, puede saltar una excepcion 'null' y no se conecta a la bd, reinicie el programa");
+
+            System.out.println(e.toString());
+            System.out.println("nota: si se dejo el programa en espera por mucho tiempo, puede saltar una excepcion 'null' y no se conecta a la bd, reinicie NetBeans");
             %>
-            <h1>Error al conectar la base de datos</h1>
+            <form class="formulario" >
+                <h1> los sistemas servidores presentan problemas en este momento vuelve a intentarlo en otro momento</h1>
+            </form>
             <%
             
             

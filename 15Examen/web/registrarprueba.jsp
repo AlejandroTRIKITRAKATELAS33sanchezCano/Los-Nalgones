@@ -35,62 +35,30 @@
                 //conectar
                 Class.forName(driver);
                 con = DriverManager.getConnection(url, username, password);
-                
-                try{
-                    
-                    String nom, appat, apmat, sexo, edad, bol;
-                    
-                    int grupoid;
-                    int  t ;
-                    int s;
-                    int g;
-                    
-                    
-                    s = Integer.parseInt(request.getParameter("semestre"));
-                    t = Integer.parseInt(request.getParameter("turno"));
-                    g = Integer.parseInt(request.getParameter("Grupo"));
-                    
-                    s = s - 1 ;
-                    s = (s * 10) + t;
-                    grupoid = s + g;
-                 
-                    
-                    bol = request.getParameter("bol");
-                    nom = request.getParameter("nombre");
-                    appat = request.getParameter("appat");
-                    apmat = request.getParameter("apmat");
-                    sexo = request.getParameter("sexo");
-                    edad = request.getParameter("edad");
-                    password = request.getParameter("password");
-                    set = con.createStatement();
-                    
+               try{
                    
+                   String q = "insert into cpu values (2,'2')";
                     
-                    String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
-                        int registro = set.executeUpdate(q);
-                    %>
-                   <form class="formulario" >
-                    <h1>Registro Exitoso</h1>
-                    <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.html">Iniciar Sesion</a></p>
-                   </form>
-                    <%
+                   set = con.createStatement();
+                   int registro = set.executeUpdate(q);
                     
-                }catch(SQLException es){
+                   System.out.println("a");
+                   
+                   
+               }catch(SQLException es){
                     System.out.println("Error al registrar en la tabla");
                     System.out.println(es.getMessage());
                     %>
-                    <form class="formulario" >
-                    <h1>Usuario o boleta ya registrado</h1> 
-                    </form>
+                    <h1>No se pudo registrar en la tabla</h1> 
                     <%
-
-                }
+                        }
                 
-            }catch(Exception e){
+                
+            }catch(Error e){
             System.out.println("Error al conectar la base de datos");
-
-            System.out.println(e.toString());
+            System.out.println(e.getMessage());
             System.out.println("nota: si se dejo el programa en espera por mucho tiempo, puede saltar una excepcion 'null' y no se conecta a la bd, reinicie NetBeans");
+            
             %>
             <form class="formulario" >
                 <h1> los sistemas servidores presentan problemas en este momento vuelve a intentarlo en otro momento</h1>

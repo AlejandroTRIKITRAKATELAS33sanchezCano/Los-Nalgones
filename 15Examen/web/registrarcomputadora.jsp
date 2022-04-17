@@ -37,41 +37,39 @@
                 con = DriverManager.getConnection(url, username, password);
                 
                 try{
+                    int idEquipo,  idmonitor, idaccesorios, idsistema, idmarca, idConfiguracion;
+                    String etiqueta;
+                    String cpu;
+                    int idcpu;
+                    int idLaboratorio;
+                    set = con.createStatement();
+                    //Registrar el cpu
+                    idcpu = Integer.parseInt(request.getParameter("serial"));
+                    cpu = request.getParameter("serial");
+                    String q = "insert into cpu values ("+idcpu+",'"+cpu+"')";
+                        int registro = set.executeUpdate(q);
                     
-                    String nom, appat, apmat, sexo, edad, bol;
-                    
-                    int grupoid;
-                    int  t ;
-                    int s;
-                    int g;
-                    
-                    
-                    s = Integer.parseInt(request.getParameter("semestre"));
-                    t = Integer.parseInt(request.getParameter("turno"));
-                    g = Integer.parseInt(request.getParameter("Grupo"));
-                    
-                    s = s - 1 ;
-                    s = (s * 10) + t;
-                    grupoid = s + g;
+                    //Registrar todo el equipo
+                    idEquipo = Integer.parseInt(request.getParameter("etiqueta"));
+                    etiqueta = request.getParameter("etiqueta");
+                    idLaboratorio = Integer.parseInt(request.getParameter("laboratorio"));
+                    idmonitor = Integer.parseInt(request.getParameter("Monitor"));
+                    idaccesorios = Integer.parseInt(request.getParameter("Teclado"));
+                    idConfiguracion = Integer.parseInt(request.getParameter("Sistema"));
+                    idmarca = Integer.parseInt(request.getParameter("Marca"));
                  
                     
-                    bol = request.getParameter("bol");
-                    nom = request.getParameter("nombre");
-                    appat = request.getParameter("appat");
-                    apmat = request.getParameter("apmat");
-                    sexo = request.getParameter("sexo");
-                    edad = request.getParameter("edad");
-                    password = request.getParameter("password");
-                    set = con.createStatement();
+                    String q1 = "insert into equipo values ("+idEquipo+",'"+etiqueta+"',"+idcpu+","+idmonitor+","+idaccesorios+","+idConfiguracion+","
+                            + ""+idLaboratorio+","+idmarca+")";
+                    
+                        int registro2 = set.executeUpdate(q1);
+                    
                     
                    
-                    
-                    String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
-                        int registro = set.executeUpdate(q);
                     %>
                    <form class="formulario" >
-                    <h1>Registro Exitoso</h1>
-                    <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.html">Iniciar Sesion</a></p>
+                    <h1>Computadora Registrada</h1>
+                    <p><a class="link" href="Iniciar_Sesion.html">Volver a inicio</a></p>
                    </form>
                     <%
                     
@@ -86,10 +84,9 @@
 
                 }
                 
-            }catch(Exception e){
+            }catch(Error e){
             System.out.println("Error al conectar la base de datos");
-
-            System.out.println(e.toString());
+            System.out.println(e.getMessage());
             System.out.println("nota: si se dejo el programa en espera por mucho tiempo, puede saltar una excepcion 'null' y no se conecta a la bd, reinicie NetBeans");
             %>
             <form class="formulario" >

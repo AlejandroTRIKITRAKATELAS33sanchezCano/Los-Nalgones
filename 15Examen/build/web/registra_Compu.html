@@ -16,24 +16,32 @@
     </script>
 </head>  
 <body>
-    <form class="formulario" action="perfil.html">
-        <h1>Registrate</h1>
+    <form class="formulario" action="registrarcomputadora.jsp">
+        <h1>Registra tu Equipo</h1>
 
         <div class="contenedor">
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Numero Serial (solo numeros)" name="serial">
             </div>
+            
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" placeholder="Etiqueta (solo numeros)" name="etiqueta">
+            </div>
+        
+            
+        
 
         <h3>Monitor</h3>
             <div class="grupo">
                 <label for="Monitor">Medida</label>
                 <div class="select">
                 <select name="Monitor" id="Monitor">
-                    <option value="12">1280x1024</option>
-                    <option value="13">1366x768</option>
-                    <option value="16">1600x900</option>
-                    <option value="19">1920x1080</option>
+                    <option value="1">1280x1024</option>
+                    <option value="2">1366x768</option>
+                    <option value="3">1600x900</option>
+                    <option value="4">1920x1080</option>
                 </select>
                 </div>
             </div>
@@ -41,26 +49,17 @@
         <h3>Accesorios</h3>
             
             <div class="grupo">
-                <label for="Mouse">Mouse</label>
-                <div class="select">
-                    <select name="Mouse" id="Mouse">
-                        <option value="S">SI</option>
-                        <option value="N">NO</option>
-                    </select>
-                </div>
-
-                <label for="Teclado">Teclado</label>
+                <label for="Teclado"> Mouse y Teclado</label>
                 <div class="select">
                 <select name="Teclado" id="Teclado">
-                    <option value="S">SI</option>
-                    <option value="N">NO</option>
+                    <option value="1">SI</option>
+                    <option value="2">NO</option>
                 </select>
                 </div>
 
                 <label for="Grupo">Cámara</label>
                 <div class="select">
                 <select name="Grupo" id="Grupo">
-                    <option value="S">SI</option>
                     <option value="N">NO</option>
                 </select>
                 </div>
@@ -71,25 +70,35 @@
                 <label for="Sistema">Sitema</label>
                 <div class="select">
                 <select name="Sistema" id="Sistema">
-                    <option value="1">Windows XP</option>
-                    <option value="2">Windows Vista</option>
-                    <option value="3">Windows 7</option>
-                    <option value="4">Windows 8</option>
-                    <option value="5">Windows 10</option>
-                    <option value="6">Windows 11</option>
+                    <option value="1">Windows 10</option>
+                    <option value="2">Windows 11</option>
+                    <option value="3">Windows 8</option>
+                    <option value="4">Windows 7</option>
+                    <option value="5">Windows XP</option>
+                    <option value="6">Windows Vista</option>
                 </select>
                 </div>
 
                 <label for="Marca">Marca</label>
                 <div class="select">
                 <select name="Marca" id="Marca">
-                    <option value="DELL">DELL</option>
-                    <option value="OTRA">Otra</option>
+                    <option value="1">DELL</option>
+                    <option value="2">Otra</option>
                 </select>
                 </div>
             </div>
-            <input type="submit" value="Registrate" class="saber-mas" onclick="Grupo()">
-            <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.html">Iniciar Sesion</a></p>
+        <h3>Ubicacion</h3>
+            <label for="Marca">Laboratorio</label>
+                <div class="select">
+                <select name="laboratorio" id="Marca">
+                    <option value="1">LBD</option>
+                    <option value="2">LDS</option>
+                    <option value="3">LNT</option>
+                    <option value="4">4.0</option>
+                </select>
+                </div>
+            <input type="submit" value="Registrar Equipo" class="saber-mas" onclick="Grupo()">
+            <input type="button" value="Volver" class="saber-mas" onclick="history.back()">
         </div>
     </form>
 </body>
