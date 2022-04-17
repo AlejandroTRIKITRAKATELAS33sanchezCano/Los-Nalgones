@@ -7,7 +7,8 @@
 <%@page contentType="text/html" language="java"
         import="java.sql.*, java.util.*,java.text.*"
         pageEncoding="UTF-8"%>
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style_cuenta.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,7 +68,9 @@
                     String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
                         int registro = set.executeUpdate(q);
                     %>
+                   <form class="formulario" action ="registrar.jsp">
                     <h1>Registro Exitoso</h1>
+                    <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.html">Iniciar Sesion</a></p>
                      <a href="index.jsp">Regresar a principal</a>
                     <%
                     
@@ -83,6 +86,7 @@
             }catch(Exception e){
             System.out.println("Error al conectar la base de datos");
             System.out.println(e.getMessage());
+            System.out.println("nota: si se dejo el programa en espera por mucho tiempo, puede saltar una excepcion 'null' y no se conecta a la bd, reinicie el programa");
             %>
             <h1>Error al conectar la base de datos</h1>
             <%
