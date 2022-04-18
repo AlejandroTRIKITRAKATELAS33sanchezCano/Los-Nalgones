@@ -16,7 +16,7 @@
         <nav>
             <a href="index.jsp">Inicio</a>
             <a href="registrarvista.html">Registrarse</a>
-            <a href="Iniciar_Sesion.html">Inciar sesión</a>
+            <a href="Iniciar_Sesion.jsp">Inciar sesión</a>
         </nav>
         <section class="textos-header">
             <h1>IKPALI</h1>
