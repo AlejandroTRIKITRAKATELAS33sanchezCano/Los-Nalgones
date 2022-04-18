@@ -6,6 +6,48 @@ body {
     background-attachment: fixed;
     
 }
+
+/*HEADER*/
+
+header{
+    height: 100px;
+    background: #0b986a;
+    padding: 0 50px;
+    color:aliceblue;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 200;
+}
+
+.menu a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.mostrar-menu, .esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0,4s;
+}
+
+.mostrar-menu{
+    order: 1;
+}
+
+.menu a:hover, .mostrar-menu:hover , .esconder-menu:hover{
+    color: #b1e8b0;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -159,6 +201,26 @@ label{
     }
 }
 
+table, thead, td{
+
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table,  thead, td{
+    padding: 15px;
+}
+
+table{
+
+    width: 800px;
+    
+    position: relative;
+
+    top: 3%;
+    left: 3%;
+}
 
 
 
