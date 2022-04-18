@@ -2,6 +2,7 @@
 <%@page contentType="text/html" language="java"
         import="java.sql.*, java.util.*,java.text.*"
         pageEncoding="UTF-8"%>
+ <link rel="stylesheet" href="css/style_cuenta.css">
 <%
             //aqui ya puedo incorporar java 
             Connection con = null;
@@ -43,7 +44,9 @@
                     
                     
                     %>
-               WAAAAA YA INICIO SESION     
+              <form class="formulario" >
+                    <h1>Usuario o boleta incorrecta</h1> 
+                    </form> 
                     <%
                    
                         
@@ -55,7 +58,7 @@
                     System.out.println(es.getMessage());
                     %>
                     <form class="formulario" >
-                    <h1>Usuario o boleta ya registrado</h1> 
+                    <h1>Usuario o boleta incorrecta</h1> 
                     </form>
                     <%
 
@@ -67,7 +70,7 @@
             System.out.println("nota: si se dejo el programa en espera por mucho tiempo, puede saltar una excepcion 'null' y no se conecta a la bd, reinicie NetBeans");
             %>
             <form class="formulario" >
-                <h1> los sistemas servidores presentan problemas en este momento vuelve a intentarlo en otro momento</h1>
+                <h1> los servidores presentan problemas en este momento vuelve a intentarlo en otro momento</h1>
             </form>
             <%
             

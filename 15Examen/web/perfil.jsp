@@ -59,7 +59,7 @@
             &#8801
         </label>
         <nav class="menu">
-            <a href="index.jsp">Inicio</a>
+            <a href="index.jsp">Salir</a>
             
             <label for="check" class="esconder-menu">
                 &#215
@@ -89,7 +89,6 @@
                     <li><i class="icono fas fa-calendar-alt"></i> Edad:<%=rs.getInt("edad")%><p id="edad"></p></li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-marker-alt"></i> Maquina asignada: <p id="maquina"></p></li>
                     <li><i class="icono fas fa-briefcase"></i> Grupo: <%=rs.getInt("Grupo_idGrupo")%><p id="grupo"></p></li>
                     <li><i class="icono fas fa-user-check"></i> Turno:<%
                         int a;
@@ -103,10 +102,11 @@
                         <%} 
                         
                         %> <p id="Turno"></p></li>
+                    <li><i class="icono fas fa-map-marker-alt"></i><a href="editaralumno.jsp?id=<%=id%>" class="saber-mas">Editar Datos</a><p id="maquina"></p></li>
                 </ul>
             </div>
             <a href="registra_Compu.html" class="saber-mas">Registrar un Equipo</a>
-            <a href="problema.html" class="saber-mas">Reportar un problema</a>
+            <a href="maquinas.jsp?id2=<%=id%>" class="saber-mas">Consultar Equipos / Reportar un problema</a>
         </div>
     </section>
 </body>
@@ -114,14 +114,7 @@
                    
                     
                     
-                    }
-                    
-                    
-                
-                        
-                    
-                    
-                        
+                        }
                 }catch(SQLException es){
                     System.out.println("Error al registrar en la tabla");
                     System.out.println(es.getMessage());

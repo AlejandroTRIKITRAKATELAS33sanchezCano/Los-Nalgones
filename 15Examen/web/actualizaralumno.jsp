@@ -66,12 +66,12 @@
                     
                    
                     
-                    String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
+                    String q = "Update alumno set nombre='"+nom+"', appat='"+appat+"', apmat='"+apmat+"', sexo="+sexo+",edad="+edad+",password='"+password+"',Grupo_idGrupo="+grupoid+" where idBoleta="+bol;
                         int registro = set.executeUpdate(q);
                     %>
                    <form class="formulario" >
-                    <h1>Registro Exitoso</h1>
-                    <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.jsp">Iniciar Sesion</a></p>
+                    <h1>Actualizacion Exitosa</h1>
+                     <a href="perfil.jsp?id=<%=bol%>">"<input type="button" value="Volver al perfil" class="saber-mas" onclick=></a>
                    </form>
                     <%
                     
@@ -80,7 +80,8 @@
                     System.out.println(es.getMessage());
                     %>
                     <form class="formulario" >
-                    <h1>Usuario o boleta ya registrado</h1> 
+                    <h1>No se pudo inicie sesion e intentelo de nuevo</h1>
+                    <a href="index.jsp">"<input type="button" value="Volver a inici class="saber-mas" onclick=></a>
                     </form>
                     <%
 

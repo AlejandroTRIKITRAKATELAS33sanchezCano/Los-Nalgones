@@ -20,7 +20,7 @@
         </nav>
         <section class="textos-header">
             <h1>IKPALI</h1>
-            <h2>Descubre donde te sientas y gestiona tu equipo</h2>
+            <h2>Administracion de equipos de laboratorio</h2>
         </section>
         <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
                 style="height: 100%; width: 100%;">
@@ -35,12 +35,12 @@
                 <img src="img/ilustracion2.svg" alt="" class="imagen-about-us">
                 <div class="contenido-textos">
                     <h3><span>1</span>¿Qué es Ikpali?</h3>
-                    <p>IKPALI es un sistema encargado de gestionar los lugares que cada estudiante en los laboratorios de Programacion del CECyT 9 brindando diversas herramientas
-                        que facilitan la gestion de cada uno de los laboratorios, las herramientas que brindamos son: 
+                    <p>IKPALI es un sistema encargado de gestiona los laboratorios de Programacion del CECyT 9 brindando diversas herramientas
+                        que facilitan la gestion de problemas, sesiones y maquinas de cada uno de los laboratorios, las herramientas que brindamos son: 
                         <ul>
-                            <li type="circle">Elegir tu equipo de computo</li>
+                            <li type="circle">Registrarse e iniciar sesion</li>
                             <li type="circle">Consultar errores que haya tenido el sistema antes</li>
-                            <li type="circle">Mandar solicitud de baja del laboratorio</li>
+                            <li type="circle">Editar datos</li>
                             <li type="circle">Avisar acerca de algun error que haya tenido la maquina</li>
                         </ul>
                     </p>

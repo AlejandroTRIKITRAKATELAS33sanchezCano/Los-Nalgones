@@ -71,7 +71,7 @@
                     %>
                    <form class="formulario" >
                     <h1>Registro Exitoso</h1>
-                    <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.html">Iniciar Sesion</a></p>
+                    <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.jsp">Iniciar Sesion</a></p>
                    </form>
                     <%
                     
