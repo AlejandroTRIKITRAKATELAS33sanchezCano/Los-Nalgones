@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/perfil.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+    <title>Perfil</title>
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">IKPALI</h2>
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">
+            &#8801
+        </label>
+        <nav class="menu">
+            <a href="../index.html">Inicio</a>
+            <a href="Iniciar_Sesion.html">Perfil</a>
+            <a href="">Inicia Ahora</a>
+            <label for="check" class="esconder-menu">
+                &#215
+            </label>
+        </nav>
+    </header>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="CSS/img/usuario.png" alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo" id="Nombre_Usuario">Nombre de muestra</h3>
+                <p class="texto">Hola de nuevo, espero disfrutes lo que ofrece nuestro sistema, cualquier duda no olvides en consultarla en nuestros correos</p>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-phone-alt"></i> Numero de Boleta: <p id="bol"></p></li>
+                    <li><i class="icono fas fa-user-check"></i> Nombre: <p id="nom"></p><p id="appat"></p><p id="apmat"></p></li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Edad: <p id="edad"></p></li>
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-marker-alt"></i> Maquina asignada: <p id="maquina"></p></li>
+                    <li><i class="icono fas fa-briefcase"></i> Grupo: <p id="grupo"></p></li>
+                    <li><i class="icono fas fa-user-check"></i> Turno: <p id="Turno"></p></li>
+                </ul>
+            </div>
+            <a href="HTML/registra_Compu.html" class="saber-mas">Gestiona Tu Equipo</a>
+        </div>
+    </section>
+</body>
+</html>
