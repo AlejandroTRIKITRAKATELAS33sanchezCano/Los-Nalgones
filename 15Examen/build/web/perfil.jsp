@@ -107,6 +107,7 @@
             </div>
             <a href="registra_Compu.html" class="saber-mas">Registrar un Equipo</a>
             <a href="maquinas.jsp?id2=<%=id%>" class="saber-mas">Consultar Equipos / Reportar un problema</a>
+             <a href="bitacoraproblemas.jsp?id=<%=id%>" class="saber-mas">ver Bitacora de Errores del laboratorio</a>
         </div>
     </section>
 </body>

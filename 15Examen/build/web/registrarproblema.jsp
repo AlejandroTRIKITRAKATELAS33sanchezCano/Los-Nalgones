@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" language="java"
-        import="java.sql.*, java.util.*,java.text.*"
+        import="java.sql.*, java.util.*,java.text.* , java.time.LocalDate"
         pageEncoding="UTF-8"%>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style_cuenta.css">
@@ -37,43 +37,60 @@
                 con = DriverManager.getConnection(url, username, password);
                 
                 try{
+                    String descripcion1 = request.getParameter("descripcion1");
+                    String descripcion = descripcion1 + request.getParameter("descripcion");
+                    int etiqueta = Integer.parseInt(request.getParameter("etiqueta"));
+                    int profesor = Integer.parseInt(request.getParameter("profesor"));
+                    int bol = Integer.parseInt(request.getParameter("boleta"));
+                    int prioridad = Integer.parseInt(request.getParameter("Monitor"));
+                    int asignatura = Integer.parseInt(request.getParameter("asignatura"));
                     
-                    String nom, appat, apmat, sexo, edad, bol;
                     
-                    int grupoid;
-                    int  t ;
-                    int s;
-                    int g;
-                    
-                    
-                    s = Integer.parseInt(request.getParameter("semestre"));
-                    t = Integer.parseInt(request.getParameter("turno"));
-                    g = Integer.parseInt(request.getParameter("Grupo"));
-                    
-                    s = s - 1 ;
-                    s = (s * 10) + t;
-                    grupoid = s + g;
-                 
-                    
-                    bol = request.getParameter("bol");
-                    nom = request.getParameter("nombre");
-                    appat = request.getParameter("appat");
-                    apmat = request.getParameter("apmat");
-                    sexo = request.getParameter("sexo");
-                    edad = request.getParameter("edad");
-                    password = request.getParameter("password");
                     set = con.createStatement();
                     
-                   
+                    String q = "select * from reporte order by idReporte asc";
+                        rs = set.executeQuery(q);
+                        
+                        while (rs.next()){
+                            int a;   
+                            a = rs.getInt("idReporte") + 1;   
+                            
+                            try{
+                                set = con.createStatement();
+                                
+                                LocalDate fecha = LocalDate.now();
+                                System.out.println(fecha);
+                                
+                                Calendar calendario = Calendar.getInstance();
+                                Calendar calendario2 = new GregorianCalendar();
+                                int hora, minutos, segundos;
+                                hora =calendario.get(Calendar.HOUR_OF_DAY);
+                                minutos = calendario.get(Calendar.MINUTE);
+                                segundos = calendario.get(Calendar.SECOND);
+                                String b = hora + ":" + minutos + ":" + segundos;
+                                System.out.println(hora + ":" + minutos + ":" + segundos);
                     
-                    String q = "insert into alumno values ("+bol+",'"+nom+"','"+appat+"','"+apmat+"',"+sexo+","+edad+",'"+password+"',"+grupoid+")";
-                        int registro = set.executeUpdate(q);
-                    %>
+                                String q2 = "insert into reporte values("+a+",'"+descripcion+"','"+fecha+"','"+b+"',"+etiqueta+","+profesor+","+bol+","+prioridad+",1,"+asignatura+")";
+                                    int registro = set.executeUpdate(q2);
+                                
+                                      %>
                    <form class="formulario" >
-                    <h1>Registro Exitoso</h1>
-                    <p>¿Ya tienes una cuenta?<a class="link" href="Iniciar_Sesion.jsp">Iniciar Sesion</a></p>
+                    <h1>Problema registrado exitosamente</h1>
+                    <p><a class="link" href="index.jsp">Volver a inicio</a></p>
                    </form>
                     <%
+
+                                    }catch(SQLException es){
+                                System.out.println("Error al registrar en la tabla");
+                                System.out.println(es.getMessage());
+                                %>
+                                <form class="formulario" >
+                                <h1>Usuario o boleta ya registrado</h1> 
+                                </form>
+                                <%
+                            
+                                    }
+                        }
                     
                 }catch(SQLException es){
                     System.out.println("Error al registrar en la tabla");
@@ -86,7 +103,7 @@
 
                 }
                 
-            }catch(Exception e){
+            }catch(Error e){
             System.out.println("Error al conectar la base de datos");
 
             System.out.println(e.toString());

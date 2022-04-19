@@ -20,12 +20,12 @@
 
             <div class="input-contenedor">
                 <i class="fa-solid fa-hashtag icon"></i>
-                <input type="text" placeholder="Numero de Boleta" name="boleta">
+                <input type="text" placeholder="Numero de Boleta" name="boleta" required="required">
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" name="contra">
+                <input type="password" placeholder="Contraseña" name="contra" required="required">
             </div>
 
             <input type="submit" value="Login" class="saber-mas">

@@ -82,7 +82,7 @@
                     <img src="img/Papi_Pulido.jpeg" alt="Pulido Robles Daniel Alfonoso">
                     <h4>Pulido Robles Daniel Alfonso</h4>
                     <p>Encargado del JS y BD</p>
-                    <a href="https://daniel89662.github.io/4IV82/" class="saber-mas">Saber Mas</a>
+                    <a href="https://github.com/Daniel89662" class="saber-mas">Saber Mas</a>
                 </div>
             </div>
         </section>

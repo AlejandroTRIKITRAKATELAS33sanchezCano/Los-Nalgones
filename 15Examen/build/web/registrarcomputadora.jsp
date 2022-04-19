@@ -69,7 +69,7 @@
                     %>
                    <form class="formulario" >
                     <h1>Computadora Registrada</h1>
-                    <p><a class="link" href="Iniciar_Sesion.html">Volver a inicio</a></p>
+                    <p><a class="link" href="index.jsp">Volver a inicio</a></p>
                    </form>
                     <%
                     
@@ -94,17 +94,8 @@
             </form>
             <%
             
-            
             }
-
-
-
-        
-        
-        
-        
-        
-        //response.sendRedirect("https://www.youtube.com/watch?v=B5jLhQP9-Rk&list=RDGMEMJQXQAmqrnmK1SEjY_rKBGA&start_radio=1&rv=sXKB9dPhXDI&ab_channel=Polyphia"); %>
+      %>
     <body>
         
     </body>
