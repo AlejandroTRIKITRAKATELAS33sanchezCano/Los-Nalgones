@@ -33,7 +33,7 @@
             <div class="contenedor">
                 <div class="input-contenedor">
                     <i class="fas fa-user icon"></i>
-                    <input type="text"  value="<%=id%>" readonly="readonly">
+                    <input type="text"  value="<%=id%>" readonly="readonly" name="etiqueta">
                 </div>
     
             <h3>Responsables</h3>
@@ -41,7 +41,7 @@
                     <label for="Monitor">Alumno Boleta de la sesion iniciada:</label>
                 </div>
                 <div class="input-contenedor">
-                    <input type="text" value="<%=id2%>"readonly="readonly" >
+                    <input type="text" value="<%=id2%>"readonly="readonly" name="boleta">
                 </div>
                 
                 <div class="grupo">
@@ -57,7 +57,7 @@
                  <div class="grupo">
                     <label for="Monitor">Asignatura</label>
                <div class="select">
-                    <select name="profesor" id="Monitor">
+                    <select name="asignatura" id="Monitor">
                         <option value="1">Programacion y Servicios Web</option>
                         <option value="2">Bases de Datos</option>
                         <option value="3">Laboratorio de Proyectos de Tec.</option>
@@ -69,7 +69,7 @@
                 <div class="grupo">
                     <label for="Monitor">Donde se ubica?</label>
                     <div class="select">
-                    <select name="Monitor" id="Monitor">
+                    <select name="descripcion1" id="Monitor">
                         <option value="Gabinete: ">Gabinete</option>
                         <option value="Monitor: ">Monitor</option>
                         <option value="Accesorios: ">Accesorios</option>
@@ -79,9 +79,8 @@
                     </div>
                 </div>
                 <div class="input-contenedor">
-                    <input type="text" placeholder="Describelo (45 caracteres maximo)" name="descripcion">
+                    <input type="text" placeholder="Describelo (45 caracteres maximo)" name="descripcion" required="required">
                 </div>
-    
                 <h3>Datos extras</h3>
                 
                 <div class="grupo">
@@ -92,12 +91,6 @@
                         <option value="1">Utilizable</option>
                     </select>
                     </div>
-                </div>
-                <div class="grupo">
-                    <label for="Monitor">Numero de reporte:(asegurate de no reportar el mismo error 2 veces)</label>
-                </div>
-                <div class="input-contenedor">
-                    <input type="number" placeholder="Numero de reporte">
                 </div>
                 </div>
                 <input type="submit" value="Enviar Problema" class="saber-mas" onclick="Grupo()">

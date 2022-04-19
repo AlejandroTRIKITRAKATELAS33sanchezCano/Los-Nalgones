@@ -174,7 +174,7 @@
                     %></td>
             
             <td><a href="problema.jsp?id=<%=rs.getString("Eitqueta")%>&&id2=<%=id2%>"><input type="button" value="Reportar" class="saber-mas"></a></td>
-            <td><input type="button" value="Editar datos" class="saber-mas"></td>
+            <td><a href="editarcomputadora.jsp?id=<%=rs.getString("Eitqueta")%>&&id2=<%=rs.getString("CPU_idMaquina")%>&&id3=<%=id2%>"><input type="button" value="Editar Datos" class="saber-mas"></a></td>
         </tr>
                     <%
                     }
@@ -183,7 +183,7 @@
                     System.out.println(es.getMessage());
                     %>
                     <form class="formulario" >
-                    <h1>Usuario o boleta ya registrado</h1> 
+                    <h1>Error al consultar las maquinas</h1> 
                     </form>
                     <%
 

@@ -25,6 +25,7 @@
             String password;
             String driver;
             
+            int id3 = Integer.parseInt(request.getParameter("bol"));
             
             url ="jdbc:mysql://localhost/bdexamen";
             username = "root";
@@ -36,19 +37,14 @@
                 Class.forName(driver);
                 con = DriverManager.getConnection(url, username, password);
                 
+               
+                
                 try{
                     int idEquipo,  idmonitor, idaccesorios, idsistema, idmarca, idConfiguracion;
                     String etiqueta;
                     String cpu;
                     int idcpu;
                     int idLaboratorio;
-                    set = con.createStatement();
-                    //Registrar el cpu
-                    idcpu = Integer.parseInt(request.getParameter("serial"));
-                    cpu = request.getParameter("serial");
-                    String q = "insert into cpu values ("+idcpu+",'"+cpu+"')";
-                        int registro = set.executeUpdate(q);
-                    
                     //Registrar todo el equipo
                     idEquipo = Integer.parseInt(request.getParameter("etiqueta"));
                     etiqueta = request.getParameter("etiqueta");
@@ -59,17 +55,16 @@
                     idmarca = Integer.parseInt(request.getParameter("Marca"));
                  
                     
-                    String q1 = "insert into equipo values ("+idEquipo+",'"+etiqueta+"',"+idcpu+","+idmonitor+","+idaccesorios+","+idConfiguracion+","
-                            + ""+idLaboratorio+","+idmarca+")";
-                    
+                    String q1 = "Update equipo set Eitqueta ='"+etiqueta+"', Monitor_idMonitor ="+idmonitor+", Accesorios_idAccesorios ="+idaccesorios+", Configuracion_idConfiguracion ="+idConfiguracion+", Laboratorio_idLaboratorio ="+idLaboratorio+ ", Marca_idMarca ="+idmarca+" where idEquipo="+idEquipo; 
+                     set = con.createStatement();
                         int registro2 = set.executeUpdate(q1);
                     
                     
                    
                     %>
                    <form class="formulario" >
-                    <h1>Computadora Registrada</h1>
-                    <p><a class="link" href="index.jsp">Volver a inicio</a></p>
+                    <h1>Equipo Actualizado</h1>
+                    <p><a class="link" href="perfil.jsp?id=<%=id3%>">Volver al perfil</a></p>
                    </form>
                     <%
                     
@@ -78,7 +73,8 @@
                     System.out.println(es.getMessage());
                     %>
                     <form class="formulario" >
-                    <h1>Usuario o boleta ya registrado</h1> 
+                    <h1>Error al actualizar</h1> 
+                    <p><a class="link" href="perfil.jsp?id=<%=id3%>">Volver al perfil</a></p>
                     </form>
                     <%
 
@@ -90,7 +86,8 @@
             System.out.println("nota: si se dejo el programa en espera por mucho tiempo, puede saltar una excepcion 'null' y no se conecta a la bd, reinicie NetBeans");
             %>
             <form class="formulario" >
-                <h1> los sistemas servidores presentan problemas en este momento vuelve a intentarlo en otro momento</h1>
+                <h1> los servidores presentan problemas en este momento vuelve a intentarlo en otro momento</h1>
+                <p><a class="link" href="perfil.jsp?id=<%=id3%>">Volver al perfil</a></p>
             </form>
             <%
             

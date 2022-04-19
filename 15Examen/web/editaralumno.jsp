@@ -37,36 +37,36 @@
         <div class="contenedor">
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Nombre" name="nombre">
+                <input type="text" placeholder="Nombre" name="nombre" required="required">
             </div>
             
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Apellido Paterno" name="appat">
+                <input type="text" placeholder="Apellido Paterno" name="appat" required="required">
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Apellido Materno" name="apmat">
+                <input type="text" placeholder="Apellido Materno" name="apmat" required="required">
             </div>
 
             <div class="input-contenedor">
                 <i class="fa-solid fa-hashtag icon"></i>
-                <input type="number" placeholder="Numero de Boleta" name="bol" value="<%=id%>" readonly="readonly">
+                <input type="number" placeholder="Numero de Boleta" name="bol" value="<%=id%>" readonly="readonly" required="required">
             </div>
 
             <div class="input-contenedor">
                 <i class="fa-solid fa-hashtag icon"></i>
-                <input type="number" placeholder="Introduce tu Edad" name="edad">
+                <input type="number" placeholder="Introduce tu Edad" name="edad" required="required">
             </div>
             
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" name="password">
+                <input type="password" placeholder="Contraseña" name="password" required="required">
             </div>
             <div class="grupo">
                 <label for="semestre">Semestre</label>
-                <select name="semestre" id="semestre">
+                <select name="semestre" id="semestre" required="required">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
