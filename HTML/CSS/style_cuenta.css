@@ -91,10 +91,22 @@ input[type="number"]{
     margin-bottom: 15px;
     border: 1px solid #0b986a;
 }
+
 .icon{
     min-width: 50px;
     text-align: center;
     color: #0b986a;
+}
+
+.input-contenedor_in{
+    margin-bottom: 15px;
+    border: 1px solid #980b0b;
+}
+
+.icon_in{
+    min-width: 50px;
+    text-align: center;
+    color: #980b0b;
 }
 
 .saber-mas{
