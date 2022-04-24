@@ -31,7 +31,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `alumno` WRITE;
 /*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
-INSERT INTO `alumno` VALUES (1,'ya','duerman a','xochilt',0,0,'simelo',1),(22,'asdasd','asdasd','asdasd',1,22,'22',1),(888,'Daniel','Polido','RRRR',0,999,'123',105),(2021,'Daniel','Pulido','Robles',0,12,'simelo',98),(2022,'Daniel','Pulido','Robles',0,12,'simelo',98),(2024,'Daniel','Pulido','Robles',0,12,'simelo',98),(2029,'Sanile','nO','si',0,12,'simelose',82);
+INSERT INTO `alumno` VALUES (22,'asdasd','asdasd','asdasd',1,22,'22',1),(888,'Daniel','Polido','RRRR',0,999,'123',105),(2021,'Daniel','Pulido','Robles',0,12,'simelo',98),(2022,'Daniel','Pulido','Robles',0,12,'simelo',98),(2024,'Daniel','Pulido','Robles',0,12,'simelo',98),(2029,'Sanile','nO','si',0,12,'simelose',82);
 /*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
 UNLOCK TABLES;
 
